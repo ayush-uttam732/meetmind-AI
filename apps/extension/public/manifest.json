@@ -1,0 +1,27 @@
+﻿{
+  "manifest_version": 3,
+  "name": "MeetMind AI",
+  "version": "1.0.0",
+  "description": "AI meeting copilot",
+  "permissions": [
+    "storage",
+    "sidePanel",
+    "alarms"
+  ],
+  "host_permissions": [
+    "http://localhost:3001/*",
+    "http://127.0.0.1:3001/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "MeetMind AI",
+    "default_popup": "popup/popup.html"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "options_page": "options/options.html"
+}

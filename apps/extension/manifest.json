@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "MeetMind AI",
+  "version": "0.1.0",
+  "description": "AI meeting assistant. Reads the live captions of a Google Meet call as a chat and keeps your notes and tasks.",
+  "minimum_chrome_version": "116",
+  "permissions": ["sidePanel", "storage", "tabs", "scripting"],
+  "host_permissions": ["https://meet.google.com/*", "http://localhost:3001/*"],
+  "action": {
+    "default_title": "Open MeetMind AI"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost:5173/*", "http://127.0.0.1:5173/*"]
+  }
+}

@@ -1,0 +1,1 @@
+chrome.runtime.onInstalled.addListener(() => console.log("MeetMind AI Audio Capture MVP installed."));

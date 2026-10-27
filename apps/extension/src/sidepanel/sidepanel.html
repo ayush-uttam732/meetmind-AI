@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeetMind AI Panel</title>
+  <link rel="stylesheet" href="./sidepanel.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">M</span>
+      <div><strong>MeetMind AI</strong><small>Meeting assistant</small></div>
+    </div>
+    <span id="backend" class="pill off" title="Needed for AI features. Capturing the conversation works without it.">Backend: checking</span>
+  </header>
+
+  <section class="meeting card" id="meeting-card">
+    <div class="meeting-head">
+      <div>
+        <p class="eyebrow" id="meeting-eyebrow">MEETING</p>
+        <h1 id="meeting-title">No meeting detected</h1>
+        <p class="sub" id="meeting-sub"></p>
+      </div>
+      <span id="state" class="state idle">Idle</span>
+    </div>
+
+    <p id="hint" class="hint"></p>
+
+    <label id="consent-row" class="consent">
+      <input type="checkbox" id="consent">
+      <span>I have told the participants that this meeting is being transcribed.</span>
+    </label>
+
+    <div class="controls">
+      <button id="start" class="primary">Start session</button>
+      <button id="pause">Pause</button>
+      <button id="resume" class="primary">Resume</button>
+      <button id="stop" class="danger">Stop &amp; save</button>
+    </div>
+    <p id="feedback" class="feedback" role="status"></p>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="chat" class="active">Conversation</button>
+    <button role="tab" data-tab="previous">Previous</button>
+    <button role="tab" data-tab="notes">Notes &amp; tasks</button>
+  </nav>
+
+  <main>
+    <section id="tab-chat" class="pane">
+      <div id="chat" class="chat"></div>
+    </section>
+
+    <section id="tab-previous" class="pane" hidden>
+      <div id="previous"></div>
+    </section>
+
+    <section id="tab-notes" class="pane" hidden>
+      <div class="card">
+        <div class="section-title"><h2>Meeting notes</h2><span>✎</span></div>
+        <textarea id="notes" placeholder="Write meeting notes here..."></textarea>
+        <button id="save" class="wide">Save notes</button>
+        <p id="notes-feedback" class="feedback"></p>
+      </div>
+      <div class="card">
+        <div class="section-title"><h2>Action items</h2><span>✓</span></div>
+        <form id="task-form">
+          <input id="task" placeholder="Add a follow-up task..." maxlength="180" required>
+          <button type="submit" class="primary">Add</button>
+        </form>
+        <ul id="tasks"></ul>
+      </div>
+    </section>
+  </main>
+
+  <p class="disclaimer" id="disclaimer">
+    The conversation comes from Google Meet captions. No audio is recorded.
+  </p>
+
+  <script type="module" src="./sidepanel.ts"></script>
+</body>
+</html>

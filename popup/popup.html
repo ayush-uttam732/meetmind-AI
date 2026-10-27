@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeetMind AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup">
+    <header class="brand">
+      <div class="logo">✦</div>
+
+      <div>
+        <h1>MeetMind <span>AI</span></h1>
+        <p>Your real-time meeting copilot</p>
+      </div>
+
+      <div class="status-dot" title="Extension ready"></div>
+    </header>
+
+    <div class="preview-banner">
+      <span>✦</span>
+      UI PREVIEW
+      <small>No audio is being captured</small>
+    </div>
+
+    <section class="meeting-card">
+      <div class="meeting-icon">◉</div>
+
+      <div class="meeting-copy">
+        <strong>Zoom meeting</strong>
+        <span id="meetingStatus">Ready when you are</span>
+      </div>
+
+      <span class="pill">DEMO</span>
+    </section>
+
+    <button id="openPanel" class="primary">
+      <span>✦</span> Open AI Copilot
+    </button>
+
+    <button id="demoToggle" class="secondary">
+      ▶ Start demo session
+    </button>
+
+    <div class="mini-grid">
+      <div>
+        <span class="mini-icon">▤</span>
+        <strong>Notes</strong>
+        <small>Auto summary</small>
+      </div>
+
+      <div>
+        <span class="mini-icon">◎</span>
+        <strong>Live coach</strong>
+        <small>Suggested replies</small>
+      </div>
+    </div>
+
+    <footer>
+      <span class="shield">♢</span>
+      You stay in control · Consent-first
+    </footer>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

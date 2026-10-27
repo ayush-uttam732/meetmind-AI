@@ -1,0 +1,158 @@
+<!-- <!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeetMind AI Copilot</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">✦</div>
+        <div>
+          <h1>MeetMind <span>AI</span></h1>
+          <p>MEETING COPILOT</p>
+        </div>
+      </div>
+      <button class="icon-button" title="Settings" aria-label="Settings">⚙</button>
+    </header>
+    <div class="preview-strip"><span class="pulse"></span> PREVIEW MODE <span class="preview-note">Sample conversation ·
+        No recording</span></div>
+    <section class="session-head">
+      <div>
+        <div class="eyebrow">CURRENT SESSION</div>
+        <h2>Product discovery call</h2>
+        <p><span class="green-dot"></span> Demo session <span class="muted">· 08:42 elapsed</span></p>
+      </div>
+      <button class="end-button" id="endSession">End</button>
+
+      <button class="small-primary" id="startRecording">🎙️ Start Recording</button>
+      <button class="end-button" id="endSession">Stop Recording</button>
+    </section>
+    <nav class="tabs">
+      <button class="tab active" data-tab="copilot">✦ Copilot</button>
+      <button class="tab" data-tab="transcript">Transcript</button>
+      <button class="tab" data-tab="notes">Notes</button>
+    </nav>
+    <main>
+      <section class="tab-content" id="copilot">
+        <div class="section-title">
+          <div>
+            <h3>Suggested response</h3>
+            <p>Based on the latest conversation</p>
+          </div><span class="sparkle">✦</span>
+        </div>
+        <article class="suggestion-card">
+          <div class="suggestion-label"><span class="tiny-spark">✦</span> RECOMMENDED REPLY <span
+              class="confidence">Helpful</span></div>
+          <p class="reply">“That sounds achievable. Could we confirm the must-have features first? Then I can give you a
+            realistic timeline and delivery plan.”</p>
+          <div class="reply-actions"><button class="small-primary" id="copyReply">Copy response</button><button
+              class="small-secondary" id="refreshReply">↻ Another option</button></div>
+        </article>
+        <div class="section-title spaced">
+          <div>
+            <h3>Conversation signals</h3>
+            <p>Things worth paying attention to</p>
+          </div>
+        </div>
+        <article class="signal-card">
+          <div class="signal-icon amber">!</div>
+          <div><strong>Clarify the deadline</strong>
+            <p>They mentioned a 10-day target. Confirm scope before committing.</p><span
+              class="signal-tag">FOLLOW-UP</span>
+          </div>
+        </article>
+        <article class="signal-card">
+          <div class="signal-icon blue">?</div>
+          <div><strong>Ask a smart question</strong>
+            <p>“Which features are essential for the first release?”</p><button class="text-button"
+              id="copyQuestion">Copy question ↗</button>
+          </div>
+        </article>
+        <div class="section-title spaced">
+          <div>
+            <h3>Live transcript</h3>
+            <p>Example conversation</p>
+          </div><span class="live-label">SAMPLE</span>
+        </div>
+        <div class="transcript">
+          <div class="utterance"><span class="speaker client">C</span>
+            <div>
+              <div class="utterance-meta">CLIENT <time>08:39</time></div>
+              <p>Can we have the first version ready in ten days?</p>
+            </div>
+          </div>
+          <div class="utterance"><span class="speaker you">Y</span>
+            <div>
+              <div class="utterance-meta">YOU <time>08:41</time></div>
+              <p>I’ll review the requirements and confirm a realistic timeline.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tab-content hidden" id="transcript">
+        <div class="section-title">
+          <div>
+            <h3>Meeting transcript</h3>
+            <p>Speaker labels and timestamps</p>
+          </div>
+        </div>
+        <div class="transcript full">
+          <div class="utterance"><span class="speaker client">C</span>
+            <div>
+              <div class="utterance-meta">CLIENT <time>08:39</time></div>
+              <p>Can we have the first version ready in ten days?</p>
+            </div>
+          </div>
+          <div class="utterance"><span class="speaker you">Y</span>
+            <div>
+              <div class="utterance-meta">YOU <time>08:41</time></div>
+              <p>I’ll review the requirements and confirm a realistic timeline.</p>
+            </div>
+          </div>
+          <div class="utterance"><span class="speaker client">C</span>
+            <div>
+              <div class="utterance-meta">CLIENT <time>08:42</time></div>
+              <p>The must-have features are login, dashboard, and exporting reports.</p>
+            </div>
+          </div>
+        </div>
+        <p class="hint">This is placeholder text for the visual prototype. Live transcription is not connected yet.</p>
+      </section>
+      <section class="tab-content hidden" id="notes">
+        <div class="section-title">
+          <div>
+            <h3>Meeting notes</h3>
+            <p>AI-generated recap preview</p>
+          </div>
+        </div>
+        <div class="note-block">
+          <h4>Key points</h4>
+          <ul>
+            <li>Target first version in 10 days.</li>
+            <li>Must-have features: login, dashboard, report export.</li>
+            <li>Timeline should be confirmed after scope review.</li>
+          </ul>
+        </div>
+        <div class="note-block">
+          <h4>Action items</h4>
+          <div class="task"><span class="checkbox"></span><span>Confirm MVP scope</span><small>YOU</small></div>
+          <div class="task"><span class="checkbox"></span><span>Share realistic delivery plan</span><small>YOU</small>
+          </div>
+        </div>
+        <button class="export-button" id="exportNotes">↓ Export sample notes (.txt)</button>
+      </section>
+    </main>
+    <footer><span class="lock">◇</span> Preview only · Recording requires explicit user action and appropriate consent.
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+
+</html> -->

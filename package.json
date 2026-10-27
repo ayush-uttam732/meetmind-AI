@@ -1,0 +1,35 @@
+{
+  "name": "meetmind-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered meeting copilot Chrome extension",
+  "workspaces": [
+    "apps/extension",
+    "apps/backend",
+    "apps/dashboard",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @meetmind/backend",
+    "dev:backend": "npm run dev --workspace @meetmind/backend",
+    "dev:extension": "npm run dev --workspace @meetmind/extension",
+    "dev:dashboard": "npm run dev --workspace @meetmind/dashboard",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
