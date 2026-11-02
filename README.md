@@ -26,3 +26,5 @@ This folder contains a visual prototype so you can see the popup and side panel 
 - No cloud sync or persistent meeting archive.
 
 All sample transcript and AI suggestion text is fictional placeholder content. This is a UI preview, not a working meeting recorder.
+=======
+# meetmind-AI
